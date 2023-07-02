@@ -63,9 +63,18 @@ router.get("/vendor", async (req, res) => {
   }
 });
 
+router.get("/buyer", async (req, res) => {
+  try {
+    const userList = await User.find({ role: "buyer" }).select("-passwordHash");
+    res.send(userList);
+  } catch (error) {
+    console.error("Error getting Buyer users:", error);
+    res.status(500).send("Internal server error");
+  }
+});
 router.get("/", async (req, res) => {
   try {
-    const userList = await User.find({ role: "Buyer" }).select("-passwordHash");
+    const userList = await User.find().select("-passwordHash");
     res.send(userList);
   } catch (error) {
     console.error("Error getting Buyer users:", error);
