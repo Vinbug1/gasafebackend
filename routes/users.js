@@ -256,10 +256,10 @@ router.post("/register", uploadOptions.single("image"), async (req, res) => {
       deliveryCharge,
       accountNumber,
       accountName,
-      facilityCertificationStatu,
+      facilityCertificationStatus,
       leakDetectionSystem,
       emergencyResponseStatus,
-      staffTraing,
+      staffTraining,
       riskAssessmentAwarenessStatus,
       riskControlFramework,
       hsePolicy,
@@ -302,10 +302,10 @@ router.post("/register", uploadOptions.single("image"), async (req, res) => {
       deliveryCharge,
       accountNumber,
       accountName,
-      facilityCertificationStatu,
+      facilityCertificationStatus,
       leakDetectionSystem,
       emergencyResponseStatus,
-      staffTraing,
+      staffTraining,
       riskAssessmentAwarenessStatus,
       riskControlFramework,
       hsePolicy,
@@ -329,6 +329,7 @@ router.post("/register", uploadOptions.single("image"), async (req, res) => {
     res.status(500).send("Internal server error");
   }
 });
+
 
 // Delete user by ID
 router.delete("/:id", async (req, res) => {
