@@ -99,48 +99,48 @@ router.get("/:id", async (req, res) => {
 });
 
 // Create a new user
-router.post("/", async (req, res) => {
-  try {
-    const {
-      name,
-      email,
-      password,
-      phone,
-      isAdmin,
-      street,
-      apartment,
-      zip,
-      city,
-      country,
-    } = req.body;
+// router.post("/", async (req, res) => {
+//   try {
+//     const {
+//       name,
+//       email,
+//       password,
+//       phone,
+//       isAdmin,
+//       street,
+//       apartment,
+//       zip,
+//       city,
+//       country,
+//     } = req.body;
 
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(400).send("User with the same email already exists");
-    }
+//     const existingUser = await User.findOne({ email });
+//     if (existingUser) {
+//       return res.status(400).send("User with the same email already exists");
+//     }
 
-    const passwordHash = bcrypt.hashSync(password, 10);
+//     const passwordHash = bcrypt.hashSync(password, 10);
 
-    const user = new User({
-      name,
-      email,
-      passwordHash,
-      phone,
-      isAdmin,
-      street,
-      apartment,
-      zip,
-      city,
-      country,
-    });
+//     const user = new User({
+//       name,
+//       email,
+//       passwordHash,
+//       phone,
+//       isAdmin,
+//       street,
+//       apartment,
+//       zip,
+//       city,
+//       country,
+//     });
 
-    const savedUser = await user.save();
-    res.send(savedUser);
-  } catch (error) {
-    console.error("Error creating a new user:", error);
-    res.status(500).send("Internal server error");
-  }
-});
+//     const savedUser = await user.save();
+//     res.send(savedUser);
+//   } catch (error) {
+//     console.error("Error creating a new user:", error);
+//     res.status(500).send("Internal server error");
+//   }
+// });
 
 // Update user by ID
 router.put("/:id", async (req, res) => {
@@ -239,31 +239,6 @@ router.post("/login", async (req, res) => {
 //   try {
 //     const { email, password } = req.body;
 
-//     const user = await User.findOne({ email });
-//     if (!user) {
-//       return res.status(400).send('User not found');
-//     }
-
-//     const isPasswordValid = bcrypt.compareSync(password, user.passwordHash);
-//     if (!isPasswordValid) {
-//       return res.status(400).send('Invalid password');
-//     }
-
-//     const token = jwt.sign(
-//       {
-//         userId: user.id,
-//         isAdmin: user.isAdmin,
-//       },
-//       secret,
-//       { expiresIn: '1d' }
-//     );
-
-//     res.status(200).send({  user:user.id, user: user.email, token, user: user.role });
-//   } catch (error) {
-//     console.error('Error user login:', error);
-//     res.status(500).send('Internal server error');
-//   }
-// });
 
 // Register vendor and user
 router.post("/register", uploadOptions.single("image"), async (req, res) => {

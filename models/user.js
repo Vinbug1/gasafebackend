@@ -65,10 +65,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     defualt: "",
   },
-  // isAdmin: {
-  //     type: Boolean,
-  //     default: false,
-  // },
+  isAdmin: {
+      type: Boolean,
+      default: false,
+  },
   gender: {
     type: String,
     required: true,
