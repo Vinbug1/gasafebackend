@@ -66,80 +66,80 @@ const userSchema = new mongoose.Schema({
     defualt: "",
   },
   isAdmin: {
-      type: Boolean,
+      type: String,
       default: false,
   },
   gender: {
     type: String,
-    required: true,
+    defualt: "",
   },
   cylinderSize: {
     type: Number,
-    required: true
+    defualt: "",
   },
   facilityCertificationStatus: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   leakDetectionSystem: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   emergencyResponseStatus: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   staffTraing: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   riskAssessmentAwarenessStatus: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   riskControlFramework: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   hsePolicy: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   lPGHazardsKnowledge: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   lPGHandlingProcedure: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   cylinderManagementKnowledge: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   hazardousAreaClassification: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   cylinderCertificationStatus: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   hoseLineCheck: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   cylinderSafetyCheck: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   lpgSafetyKnowledge: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: "",
   },
   educationalQualification: {
     type: String,
-    required: true,
+    default: '',
   },
 });
 

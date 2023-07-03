@@ -29,7 +29,6 @@ const storage = multer.diskStorage({
   },
 });
 
-
 // const storage = multer.diskStorage({
 //   destination: function (req, file, cb) {
 //     const isValid = FILE_TYPE_MAP[file.mimetype];
@@ -216,7 +215,6 @@ router.post("/login", async (req, res) => {
     );
     //const { id,name, accountNumber, role } = user;
     res.status(200).json({
-      
       image: user.image,
       userId: user.id,
       email: user.email,
@@ -238,7 +236,6 @@ router.post("/login", async (req, res) => {
 
 //   try {
 //     const { email, password } = req.body;
-
 
 // Register vendor and user
 router.post("/register", uploadOptions.single("image"), async (req, res) => {
@@ -285,7 +282,7 @@ router.post("/register", uploadOptions.single("image"), async (req, res) => {
     }
     const fileName = file.filename;
     const basePath = `${req.protocol}://${req.get("host")}/public/uploads/`;
-
+    console.log(basePath);
     const passwordHash = bcrypt.hashSync(password, 10);
 
     const user = new User({
@@ -332,7 +329,6 @@ router.post("/register", uploadOptions.single("image"), async (req, res) => {
     res.status(500).send("Internal server error");
   }
 });
-
 
 // Delete user by ID
 router.delete("/:id", async (req, res) => {
